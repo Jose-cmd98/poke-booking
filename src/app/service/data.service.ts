@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
 
-  constructor() { }
+  private url: string = "https://pokeapi.co/api/v2/pokemon";
+
+  constructor(private http : HttpClient) { }
+
+  getPokemon(name: string){
+    return this.http.get(`${this.url}/${name}`)
+  }
 }
