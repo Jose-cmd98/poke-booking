@@ -1,16 +1,23 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { PokeModel } from './api.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  private url: string = "https://pokeapi.co/api/v2/pokemon";
+  baseUrl = "https://pokeapi.co/api/v2/pokemon/";
+  pokemons = [];
 
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient) {
 
-  getPokemon(name: string){
-    return this.http.get(`${this.url}/${name}`)
+   }
+  pokeList():Observable<PokeModel>{
+     return this.http.get<PokeModel>(this.baseUrl);
+
+   }
+
+
   }
-}

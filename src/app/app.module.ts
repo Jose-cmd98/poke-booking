@@ -8,11 +8,12 @@ import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokeListComponent } from './poke-list/poke-list.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    PokeListComponent
+    PokeListComponent,
   ],
   imports: [
     BrowserModule,
