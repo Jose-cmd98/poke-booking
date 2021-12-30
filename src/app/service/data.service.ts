@@ -8,7 +8,7 @@ import { PokeModel } from './api.model';
 })
 export class DataService {
 
-  baseUrl = "https://pokeapi.co/api/v2/pokemon/";
+  baseUrl = "https://pokeapi.co/api/v2/pokemon";
   pokemons = [];
 
   constructor(private http : HttpClient) {
@@ -18,6 +18,8 @@ export class DataService {
      return this.http.get<PokeModel>(this.baseUrl);
 
    }
-
+  getPokeData(name: string){
+    return this.http.get(`baseUrl/${name}`)
+  }
 
   }
