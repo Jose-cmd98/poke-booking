@@ -1,9 +1,13 @@
-<div >
-  <section *ngFor="let item of pokemon" >
-    <h1>
-      {{item.name}}
-      <img [src]="item.sprite" alt="">
-    </h1>
 
-  </section>
+<img
+src="https://blueedtech.com.br/wp-content/themes/blue/dist/images/logo-blue-croped.gif"
+width="200"
+/>
+
+<div class="pokemon-list">
+<app-poke-card
+  *ngFor="let pokemon of dataService.pokemons; index as i"
+  [numero]="i + 1"
+  [pokemon]="pokemon"
+></app-poke-card>
 </div>
