@@ -1,6 +1,5 @@
 import { DataService } from './../service/data.service';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { PokeModel } from '../service/api.model';
 
 @Component({
@@ -10,19 +9,11 @@ import { PokeModel } from '../service/api.model';
 })
 export class PokeListComponent implements OnInit {
 
-  pokemon!: PokeModel[];
-
   constructor(public dataService: DataService) { }
 
   ngOnInit(): void {
-    this.getPoke();
 
   }
-  getPoke(){
-    this.dataService.pokeList().subscribe(data => {
-      this.pokemon = data.results;
-      console.log(this.pokemon);
-    })
-  }
+
 
 }
